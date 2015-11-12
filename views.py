@@ -17,7 +17,7 @@ class tasklist(generics.ListCreateAPIView):
         return Response(serializer.data)
 
     def perform_create(self, serializer):
-        serializer.save(username=self.request.user.Username)
+        serializer.save(username=self.request.user.username)
 
 
 class detailtasklist(generics.RetrieveUpdateDestroyAPIView):
