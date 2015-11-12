@@ -3,7 +3,7 @@ from django.conf.urls import url
 from task import views
 
 urlpatterns = [
-    url(r'^$', views.snippet_list),
-    url(r'^(?P<pk>[0-9]+)$', views.snippet_detail),
+    url(r'^$', views.tasklist.as_view()),
+    url(r'^(?P<pk>[0-9]+)$', views.detailtasklist.as_view()),
     url(r'^search/(?P<search>[\w]+)$', views.snippet_search),
 ]

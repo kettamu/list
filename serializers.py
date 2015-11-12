@@ -9,8 +9,21 @@ from django.contrib.auth.models import User
 
 
 class SnippetSerializer(serializers.ModelSerializer):
+    username = serializers.ReadOnlyField()
+
     class Meta:
         model = Snippet
         fields = ('id', 'desc', 'date', 'check', 'username')
 
+"""
+class ExampleView(APIView):
+    authentication_classes = (SessionAuthentication, BasicAuthentication)
+    permission_classes = (IsAuthenticated,)
 
+    def get(self, request, format=None):
+        content = {
+            'user': unicode(request.user),  # `django.contrib.auth.User` instance.
+            'auth': unicode(request.auth),  # None
+        }
+        return Response(content)
+"""

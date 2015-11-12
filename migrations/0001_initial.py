@@ -17,6 +17,7 @@ class Migration(migrations.Migration):
                 ('desc', models.CharField(max_length=100, null=True)),
                 ('date', models.DateField(null=True)),
                 ('check', models.BooleanField(default=False)),
+                ('username', models.CharField(default='AnonymousUser', max_length=50, null=True)),
             ],
         ),
     ]
